@@ -1,0 +1,23 @@
+{
+  "name": "bowling-kata",
+  "version": "1.0.0",
+  "description": "Bowling score tracker",
+  "scripts": {
+    "test": "jest --runInBand --verbose --colors",
+    "test:watch": "npm test -- --watchAll",
+    "test:coverage": "npm test -- --coverage"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4",
+    "jest": "^24.1.0"
+  },
+  "babel": {
+    "presets": [[
+      "@babel/preset-env",
+      { "targets": { "node": true } }
+    ]]
+  }
+}
