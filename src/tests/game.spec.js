@@ -24,4 +24,12 @@ describe('Testing score traking bowling app - ', () => {
     game.trackRoll(10);
     expect(game.getScore()).toEqual(0);
   })
+
+  test('If we have a Spare the score should be 0', () => {
+    const game = new Game();
+    game.trackRoll(6);
+    expect(game.getScore()).toEqual(6);
+    game.trackRoll(4);
+    expect(game.getScore()).toEqual(0);
+  })
 })
