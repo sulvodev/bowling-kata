@@ -6,4 +6,12 @@ describe('Testing score traking bowling app - ', () => {
 
     game.trackRoll(5);
   })
+
+  test('can get the score of a game', () => {
+    const game = new Game();
+
+    game.trackRoll(5);
+
+    expect(game.getScore()).toEqual(5);
+  })
 })
