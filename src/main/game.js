@@ -4,10 +4,10 @@ class Game {
   }
 
   trackRoll(pinsDown) {
-    this.score += pinsDown;
+    if (pinsDown !== 10) this.score += pinsDown;
   }
 
-  getScore() { 
+  getScore() {
     return this.score;
   }
 }
