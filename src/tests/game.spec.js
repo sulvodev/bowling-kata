@@ -13,12 +13,15 @@ describe('Testing score traking bowling app - ', () => {
     const game = new Game();
 
     game.trackRoll(5); // first try
-
     game.trackRoll(3); // second try
 
     expect(game.getScore()).toEqual(8);
   })
 
+  test('if Strike happens on the first try the score should be 0', () => {
+    const game = new Game();
 
-
+    game.trackRoll(10);
+    expect(game.getScore()).toEqual(0);
+  })
 })
