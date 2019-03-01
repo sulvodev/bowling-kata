@@ -1,6 +1,10 @@
 class Game {
   trackRoll(pinsDown) {
-    
+
+  }
+
+  getScore() { 
+    return 5;
   }
 }
 
