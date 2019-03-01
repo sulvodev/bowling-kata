@@ -15,9 +15,15 @@
     "jest": "^24.1.0"
   },
   "babel": {
-    "presets": [[
-      "@babel/preset-env",
-      { "targets": { "node": true } }
-    ]]
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": true
+          }
+        }
+      ]
+    ]
   }
 }
