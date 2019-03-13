@@ -9,7 +9,7 @@ describe('Testing score traking bowling app - ', () => {
 
     expect(game.getScore()).toEqual(8);
   })
-  
+
   test('if Strike happens on the first try the score should be 0', () => {
     const game = new Game();
 
@@ -33,5 +33,14 @@ describe('Testing score traking bowling app - ', () => {
     game.trackRoll(0);
 
     expect(game.getScore()).toEqual(16);
+  })
+
+  test('if a Strike was made on the first frame and the next frame is rolled, it should show the right score', () => {
+    const game = new Game();
+    game.trackRoll(10); // + plus the next two rolls
+
+    game.trackRoll(3);
+    game.trackRoll(2);
+    expect(game.getScore()).toEqual(20);
   })
 })
