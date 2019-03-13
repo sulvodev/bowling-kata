@@ -31,4 +31,13 @@ describe('Testing score traking bowling app - ', () => {
     game.trackRoll(4);
     expect(game.getScore()).toEqual(0);
   })
+
+  test('if a Spare was made on the first frame and the next try is rolled, it should show the final score ', () => {
+    const game = new Game();
+    game.trackRoll(6);
+    game.trackRoll(4);
+
+    game.trackRoll(3);
+    expect(game.getScore()).toEqual(16);
+  })
 })
