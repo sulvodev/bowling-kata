@@ -8,7 +8,7 @@ class Game {
   }
 
   getScore() {
-    const framesPlayed = Math.ceil(this.rolls.length / 2)
+    const framesPlayed = this._calculateFramesPlayed()
     let rollIndex = 0
     let score = 0
 
@@ -27,6 +27,13 @@ class Game {
     return score
   }
 
+  _calculateFramesPlayed() {
+    const strikes =  this.rolls
+      .reduce((roll, acc) => roll === 10 ? acc + 1 : acc, 0)
+
+    return strikes + Math.ceil((this.rolls.length - strikes) / 2)
+  }
+
   _isNextFrameFinished (index) {
     return this._isFrameComplete(index + 1)
   }
@@ -40,7 +47,7 @@ class Game {
   }
 
   _isFrameComplete (index) {
-    return this.rolls[index + 1] || this.rolls[index + 1] === 0
+    return this.rolls[index + 1] !== undefined
   }
 
   _isFirstTryOfNextFrameRolled (index) {

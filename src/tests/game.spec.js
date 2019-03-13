@@ -50,4 +50,35 @@ describe('Testing score traking bowling app - ', () => {
     game.trackRoll(3);
     expect(game.getScore()).toEqual(51);
   })
+
+  test('10th frame with spare', () => {
+    for (let i = 1; i <= 18; i++) { game.trackRoll(0); }
+    
+    // 10Th frame
+    game.trackRoll(5);
+    game.trackRoll(5);
+    game.trackRoll(7);
+
+
+    expect(game.getScore()).toEqual(17);
+  })
+
+  test('10th frame with all strikes', () => {
+    for (let i = 1; i <= 18; i++) { game.trackRoll(0); }
+    
+    // 10Th frame
+    game.trackRoll(10);
+    game.trackRoll(10);
+    game.trackRoll(10);
+
+
+    expect(game.getScore()).toEqual(30);
+  })
+
+  test('perfect game', () => {
+    for (let i = 1; i <= 12; i++) { game.trackRoll(10); }
+
+    expect(game.getScore()).toEqual(300);
+  })
+
 })
