@@ -1,14 +1,6 @@
 import Game from '../main/game';
 
 describe('Testing score traking bowling app - ', () => {
-  test('can get the score of a game', () => {
-    const game = new Game();
-
-    game.trackRoll(5);
-
-    expect(game.getScore()).toEqual(5);
-  })
-
   test('insert the second try into the game', () => {
     const game = new Game();
 
@@ -17,7 +9,7 @@ describe('Testing score traking bowling app - ', () => {
 
     expect(game.getScore()).toEqual(8);
   })
-
+  
   test('if Strike happens on the first try the score should be 0', () => {
     const game = new Game();
 
@@ -38,6 +30,8 @@ describe('Testing score traking bowling app - ', () => {
     game.trackRoll(4);
 
     game.trackRoll(3);
+    game.trackRoll(0);
+
     expect(game.getScore()).toEqual(16);
   })
 })
